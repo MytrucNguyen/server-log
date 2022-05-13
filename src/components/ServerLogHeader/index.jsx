@@ -3,9 +3,10 @@ import "./index.css";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
+import Paper from '@mui/material/Paper';
 
 export default function ServerLogHeader() {
-  const [checkMark, setCheckMark] = React.useState({
+  const [checkMark, setCheckMark] = useState({
     prepare_node: true,
     install_k3s: true,
     deploy_k3s_apps: true,
