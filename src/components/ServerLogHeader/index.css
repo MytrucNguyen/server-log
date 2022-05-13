@@ -1,0 +1,12 @@
+.serverLogHeader {
+    background-color: white;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+.innerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
