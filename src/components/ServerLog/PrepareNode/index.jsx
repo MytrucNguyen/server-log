@@ -61,7 +61,7 @@ export default function PrepareNode() {
           value={selected}
           onChange={handleChange}
           input={<OutlinedInput label=">>Prepare Node<<<" />}
-          renderValue={(selected) => selected.join(", ")}
+          renderValue={(selected) => selected.sort(function(a, b){return a-b}).join(", ")}
           MenuProps={MenuProps}
         >
           <MenuItem value="all">

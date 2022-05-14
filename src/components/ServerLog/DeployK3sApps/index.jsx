@@ -61,7 +61,7 @@ import {
             value={selected}
             onChange={handleChange}
             input={<OutlinedInput label=">>Deploy K3s<<<" />}
-            renderValue={(selected) => selected.join(", ")}
+            renderValue={(selected) => selected.sort(function(a, b){return a-b}).join(", ")}
             MenuProps={MenuProps}
           >
             <MenuItem value="all">
