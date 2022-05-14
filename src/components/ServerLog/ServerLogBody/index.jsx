@@ -50,10 +50,14 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 export default function ServerLogBody() {
-  const [open, setOpen] = useState(false);
+  const [open0, setOpen0] = useState(false);
+  const [open1, setOpen1] = useState(false);
 
-  const handleStepExpanded = () => {
-    setOpen(!open);
+  const handleStepExpanded0 = () => {
+    setOpen0(!open0);
+  };
+  const handleStepExpanded1 = () => {
+    setOpen1(!open1);
   };
 
   return (
@@ -64,10 +68,7 @@ export default function ServerLogBody() {
           <hr />
         </div>
         <div className="logs">
-          <Accordion
-            // expanded={expanded === "prepare_node"}
-            // onChange={handleExpandedChange("prepare_node")}
-          >
+          <Accordion>
             <AccordionSummary
               aria-controls="prepare_noded-content"
               id="prepare_noded-header"
@@ -77,30 +78,30 @@ export default function ServerLogBody() {
             </AccordionSummary>
 
             <AccordionDetails>
-              <ListItemButton onClick={handleStepExpanded}>
+              <ListItemButton onClick={handleStepExpanded0}>
                 <ListItemText>
                     <div className="stepsExpanded">
                         <p>0: </p>
-                        {open ? <ExpandLess /> : <ExpandMore />}
+                        {open0 ? <ExpandLess /> : <ExpandMore />}
                         <p>Install Prerequisites for edge server setup</p>
                     </div>
                 </ListItemText>
               </ListItemButton>
-              <Collapse in={open} timeout="auto" unmountOnExit>
+              <Collapse in={open0} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItemText sx={{marginLeft: 6.5}} primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
                 </List>
               </Collapse>
-              <ListItemButton onClick={handleStepExpanded}>
+              <ListItemButton onClick={handleStepExpanded1}>
                 <ListItemText>
                     <div className="stepsExpanded">
                         <p>1: </p>
-                        {open ? <ExpandLess /> : <ExpandMore />}
+                        {open1 ? <ExpandLess /> : <ExpandMore />}
                         <p>add Docker gpg key</p>
                     </div>
                 </ListItemText>
               </ListItemButton>
-              <Collapse in={open} timeout="auto" unmountOnExit>
+              <Collapse in={open1} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItemText sx={{marginLeft: 6.5}} primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
                 </List>
