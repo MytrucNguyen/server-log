@@ -6,7 +6,13 @@
 
 .innerWrapper {
     display: flex;
+    margin: 0 20px;
     justify-content: space-between;
     align-items: center;
-    margin: 0 20px;
+}
+
+.checkedboxed {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }

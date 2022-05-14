@@ -31,12 +31,14 @@ export default function ServerLogHeader() {
       <Paper className="serverLogHeader">
         <div className="innerWrapper">
           <h3>Location Name</h3>
-          <div className="innerWrapper">
+          <div className="checkedboxed">
             <PrepareNode />
             <InstallK3s />
             <DeployK3sApps />
             <DeployViztelRuntime />
-            <Button sx={{marginLeft: 3}} variant="contained">Get Logs</Button>
+          </div>
+          <div>
+            <Button variant="contained">Get Logs</Button>
           </div>
         </div>
       </Paper>
