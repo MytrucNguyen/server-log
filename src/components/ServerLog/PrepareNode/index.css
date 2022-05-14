@@ -1,0 +1,5 @@
+.innerNode {
+    display: flex !important;
+    align-items: center;
+    margin-top: -8px;
+}
