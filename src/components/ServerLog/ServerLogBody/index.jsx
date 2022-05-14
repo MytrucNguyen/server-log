@@ -82,7 +82,7 @@ export default function ServerLogBody() {
                 <ListItemText>
                     <div className="stepsExpanded">
                         <p>0: </p>
-                        {open0 ? <ExpandLess /> : <ExpandMore />}
+                        {open0 ? <ExpandMore /> : <ExpandLess /> }
                         <p>Install Prerequisites for edge server setup</p>
                     </div>
                 </ListItemText>
@@ -96,7 +96,7 @@ export default function ServerLogBody() {
                 <ListItemText>
                     <div className="stepsExpanded">
                         <p>1: </p>
-                        {open1 ? <ExpandLess /> : <ExpandMore />}
+                        {open1 ? <ExpandMore /> : <ExpandLess />}
                         <p>add Docker gpg key</p>
                     </div>
                 </ListItemText>
