@@ -12,6 +12,10 @@ import ErrorIcon from "@mui/icons-material/Error";
 import { Collapse, List, ListItemButton, ListItemText } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import PrepareNode from "../PrepareNode";
+import InstallK3s from "../InstallK3s";
+import DeployK3sApps from "../DeployK3sApps";
+import DeployViztelRuntime from "../DeployViztelRuntime";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -61,53 +65,99 @@ export default function ServerLogBody() {
   };
 
   return (
-    <Paper className="serverLogBody">
-      <div className="serverBodyWrapper">
-        <div className="topOfServerBody">
-          <h3>>_ Logs...</h3>
-          <hr />
+    <>
+      <Paper className="serverLogBody">
+        <div className="extracheckedboxed">
+          <div className="extracheckedboxed-inner">
+            <div className="extracheckedboxedcheckedItem">
+              <PrepareNode />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <InstallK3s />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <DeployK3sApps />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <DeployViztelRuntime />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <PrepareNode />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <InstallK3s />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <DeployK3sApps />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <DeployViztelRuntime />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <InstallK3s />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <DeployK3sApps />
+            </div>
+            <div className="extracheckedboxedcheckedItem">
+              <DeployViztelRuntime />
+            </div>
+          </div>
         </div>
-        <div className="logs">
-          <Accordion>
-            <AccordionSummary
-              aria-controls="prepare_noded-content"
-              id="prepare_noded-header"
-            >
-              <CheckCircleIcon sx={{ marginRight: 1 }} />
-              <Typography>Prepare Node</Typography>
-            </AccordionSummary>
+      </Paper>
+      <Paper className="serverLogBody">
+        <div className="serverBodyWrapper">
+          <div className="topOfServerBody">
+            <h3>>_ Logs...</h3>
+            <hr />
+          </div>
+          <div className="logs">
+            <Accordion>
+              <AccordionSummary
+                aria-controls="prepare_noded-content"
+                id="prepare_noded-header"
+              >
+                <CheckCircleIcon sx={{ marginRight: 1 }} />
+                <Typography>Prepare Node</Typography>
+              </AccordionSummary>
 
-            <AccordionDetails>
-              <ListItemButton onClick={handleStepExpanded0}>
-                <ListItemText>
+              <AccordionDetails>
+                <ListItemButton onClick={handleStepExpanded0}>
+                  <ListItemText>
                     <div className="stepsExpanded">
-                        <p>0: </p>
-                        {open0 ? <ExpandMore /> : <ExpandLess /> }
-                        <p>Install Prerequisites for edge server setup</p>
+                      <p>0: </p>
+                      {open0 ? <ExpandMore /> : <ExpandLess />}
+                      <p>Install Prerequisites for edge server setup</p>
                     </div>
-                </ListItemText>
-              </ListItemButton>
-              <Collapse in={open0} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                    <ListItemText sx={{marginLeft: 6.5}} primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                </List>
-              </Collapse>
-              <ListItemButton onClick={handleStepExpanded1}>
-                <ListItemText>
+                  </ListItemText>
+                </ListItemButton>
+                <Collapse in={open0} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    <ListItemText
+                      sx={{ marginLeft: 6.5 }}
+                      primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    />
+                  </List>
+                </Collapse>
+                <ListItemButton onClick={handleStepExpanded1}>
+                  <ListItemText>
                     <div className="stepsExpanded">
-                        <p>1: </p>
-                        {open1 ? <ExpandMore /> : <ExpandLess />}
-                        <p>add Docker gpg key</p>
+                      <p>1: </p>
+                      {open1 ? <ExpandMore /> : <ExpandLess />}
+                      <p>add Docker gpg key</p>
                     </div>
-                </ListItemText>
-              </ListItemButton>
-              <Collapse in={open1} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                    <ListItemText sx={{marginLeft: 6.5}} primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                </List>
-              </Collapse>
+                  </ListItemText>
+                </ListItemButton>
+                <Collapse in={open1} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    <ListItemText
+                      sx={{ marginLeft: 6.5 }}
+                      primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    />
+                  </List>
+                </Collapse>
 
-              {/* <Typography>
+                {/* <Typography>
                 0: Prepare and Upload Assets to Edge Server
               </Typography>
               <Typography>
@@ -119,7 +169,7 @@ export default function ServerLogBody() {
 
 
                  */}
-              {/* <AccordionSummary
+                {/* <AccordionSummary
                   sx={{ marginLeft: "-13px" }}
                   aria-controls="install_k3sd-content"
                   id="install_k3sd-header"
@@ -127,74 +177,75 @@ export default function ServerLogBody() {
                   <Typography sx={{marginLeft: '-5px'}}>add Docker gpg key</Typography>
                 </AccordionSummary> */}
 
-              {/* </div> */}
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
+                {/* </div> */}
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
             // expanded={expanded === "install_k3s"}
             // onChange={handleExpandedChange("install_k3s")}
-          >
-            <AccordionSummary
-              aria-controls="install_k3sd-content"
-              id="install_k3sd-header"
             >
-              <CheckCircleIcon sx={{ marginRight: 1 }} />
-              <Typography>Install k3s</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
+              <AccordionSummary
+                aria-controls="install_k3sd-content"
+                id="install_k3sd-header"
+              >
+                <CheckCircleIcon sx={{ marginRight: 1 }} />
+                <Typography>Install k3s</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
             // expanded={expanded === "deploy_k3s_apps"}
             // onChange={handleExpandedChange("deploy_k3s_apps")}
-          >
-            <AccordionSummary
-              aria-controls="deploy_k3s_appsd-content"
-              id="deploy_k3s_appsd-header"
             >
-              <CheckCircleIcon sx={{ marginRight: 1 }} />
-              <Typography>Deploy K3s Apps</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
+              <AccordionSummary
+                aria-controls="deploy_k3s_appsd-content"
+                id="deploy_k3s_appsd-header"
+              >
+                <CheckCircleIcon sx={{ marginRight: 1 }} />
+                <Typography>Deploy K3s Apps</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion
             // expanded={expanded === "deploy_runtime"}
             // onChange={handleExpandedChange("deploy_runtime")}
-          >
-            <AccordionSummary
-              aria-controls="deploy_runtimed-content"
-              id="deploy_runtimed-header"
             >
-              <ErrorIcon sx={{ marginRight: 1 }} />
-              <Typography>Deploy Viztel Runtime</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+              <AccordionSummary
+                aria-controls="deploy_runtimed-content"
+                id="deploy_runtimed-header"
+              >
+                <ErrorIcon sx={{ marginRight: 1 }} />
+                <Typography>Deploy Viztel Runtime</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </div>
         </div>
-      </div>
-    </Paper>
+      </Paper>
+    </>
   );
 }

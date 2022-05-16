@@ -14,12 +14,12 @@ export default function ServerLogHeader() {
         <div className="innerWrapper">
           <h3>Location Name</h3>
           <div className="checkedboxed">
-            <PrepareNode />
-            <InstallK3s />
-            <DeployK3sApps />
-            <DeployViztelRuntime />
-          </div>
-          <div>
+            <div className="checkedboxed-inner">
+              <div className="checkedItem"><PrepareNode /></div>
+              <div className="checkedItem"><InstallK3s /></div>
+              <div className="checkedItem"><DeployK3sApps /></div>
+              <div className="checkedItem"><DeployViztelRuntime /></div>
+            </div>
             <Button variant="contained">Get Logs</Button>
           </div>
         </div>
