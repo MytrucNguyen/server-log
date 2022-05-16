@@ -16,13 +16,3 @@
     flex-wrap: wrap;
     align-items: center;
 }
-
-.checkedboxed-inner {
-    display: flex;
-    flex-wrap: wrap;
-    width: 900px;
-  }
-/* 
-.checkedItem {
-    flex: 0 1 calc(20% - 8px); 
-} */

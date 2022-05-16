@@ -67,45 +67,6 @@ export default function ServerLogBody() {
   return (
     <>
       <Paper className="serverLogBody">
-        <div className="extracheckedboxed">
-          <div className="extracheckedboxed-inner">
-            <div className="extracheckedboxedcheckedItem">
-              <PrepareNode />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <InstallK3s />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <DeployK3sApps />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <DeployViztelRuntime />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <PrepareNode />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <InstallK3s />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <DeployK3sApps />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <DeployViztelRuntime />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <InstallK3s />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <DeployK3sApps />
-            </div>
-            <div className="extracheckedboxedcheckedItem">
-              <DeployViztelRuntime />
-            </div>
-          </div>
-        </div>
-      </Paper>
-      <Paper className="serverLogBody">
         <div className="serverBodyWrapper">
           <div className="topOfServerBody">
             <h3>>_ Logs...</h3>
